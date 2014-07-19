@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zefir_NoRoute>
+            <version>1.0.0</version>
+        </Zefir_NoRoute>
+    </modules>
+    <global>
+        <models>
+            <zefir_noroute>
+                <class>Zefir_NoRoute_Model</class>
+            </zefir_noroute>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <cms_page_render>
+              <observers>
+                <set_http_response_code>
+                  <type>singleton</type>
+                  <class>zefir_noroute/observer</class>
+                  <method>setCMSPageResponseCode</method>
+                </set_http_response_code>
+              </observers>
+            </cms_page_render>
+        </events>
+    </frontend>
+</config>
